@@ -1,50 +1,52 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Managers : MonoBehaviour
 {
-    static Managers s_instance;
-    static Managers Instance { get { Init(); return s_instance; } }
+    public static bool Initialized { get; set; }
+
+    private static Managers s_instance; // 유일성이 보장된다
+    public static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 갖고온다
 
     #region Contents
-    MapManager _map = new MapManager();
-    ObjectManager _obj = new ObjectManager();
 
-    public static MapManager Map { get { return Instance._map; } }
-    public static ObjectManager Object { get { return Instance._obj; } }
+    private GameManager _game = new GameManager();
+    private ObjectManager _object = new ObjectManager();
+    private MapManager _map = new MapManager();
+
+    public static GameManager Game { get { return Instance?._game; } }
+    public static ObjectManager Object { get { return Instance?._object; } }
+    public static MapManager Map { get { return Instance?._map; } }
+
     #endregion
 
     #region Core
-    DataManager _data = new DataManager();
-    PoolManager _pool = new PoolManager();
-    ResourceManager _resource = new ResourceManager();
-    SceneManagerEx _scene = new SceneManagerEx();
-    UIManager _ui = new UIManager();
 
-    public static DataManager Data { get { return Instance._data; } }
-    public static PoolManager Pool { get { return Instance._pool; } }
-    public static ResourceManager Resource { get { return Instance._resource; } }
-    public static SceneManagerEx Scene { get {  return Instance._scene; } }
-    public static UIManager UI { get {  return Instance._ui; } }
+    private DataManager _data = new DataManager();
+    private PoolManager _pool = new PoolManager();
+    private ResourceManager _resource = new ResourceManager();
+    private SceneManagerEx _scene = new SceneManagerEx();
+    private SoundManager _sound = new SoundManager();
+    private UIManager _ui = new UIManager();
+    private NetworkManager _network = new NetworkManager();
+
+    public static DataManager Data { get { return Instance?._data; } }
+    public static PoolManager Pool { get { return Instance?._pool; } }
+    public static ResourceManager Resource { get { return Instance?._resource; } }
+    public static SceneManagerEx Scene { get { return Instance?._scene; } }
+    public static SoundManager Sound { get { return Instance?._sound; } }
+    public static UIManager UI { get { return Instance?._ui; } }
+    public static NetworkManager Network { get { return Instance?._network; } }
+
     #endregion
 
-    private void Start()
+    public static void Init()
     {
-        Init();
-    }
-
-    private void Update()
-    {
-        
-    }
-
-    static void Init()
-    {
-        if (s_instance == null)
+        if (s_instance == null && Initialized == false)
         {
+            Initialized = true;
+
             GameObject go = GameObject.Find("@Managers");
             if (go == null)
             {
@@ -54,14 +56,20 @@ public class Managers : MonoBehaviour
 
             DontDestroyOnLoad(go);
             s_instance = go.GetComponent<Managers>();
-
+            s_instance._network.Init();
             s_instance._data.Init();
-            s_instance._pool.Init();
+            s_instance._sound.Init();
         }
+    }
+
+    public void Update()
+    {
+        _network?.Update();
     }
 
     public static void Clear()
     {
+        Sound.Clear();
         Scene.Clear();
         UI.Clear();
         Pool.Clear();

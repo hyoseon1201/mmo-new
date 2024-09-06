@@ -177,12 +177,16 @@ public class PlayerController : CreatureController
     {
         GameObject go = Managers.Resource.Instantiate("Skill/Dogen");
         DogenController dc = go.GetComponent<DogenController>();
-        dc.Dir = _lastDir;
-        dc.CellPos = CellPos;
+        dc.InitDogen(GetFrontCellPos(), _lastDir);
 
         _rangedSkill = true;
         yield return new WaitForSeconds(0.3f);
         State = CreatureState.Idle;
         _coSkill = null;
+    }
+
+    public override void OnDamaged()
+    {
+        Debug.Log("Player Hit!!");
     }
 }

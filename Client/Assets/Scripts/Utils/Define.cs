@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Define
 {
+    public const char MAP_TOOL_WALL = '0';
+    public const char MAP_TOOL_NONE = '1';
+
     public enum CreatureState
     {
         Idle,
@@ -32,8 +35,9 @@ public class Define
     public enum Sound
     {
         Bgm,
+        SubBgm,
         Effect,
-        MaxCount,
+        Max,
     }
 
     public enum UIEvent

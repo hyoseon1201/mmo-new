@@ -13,11 +13,8 @@ public class ResourceManager
             if (index >= 0)
                 name = name.Substring(index + 1);
 
-            GameObject go = Managers.Pool.GetOriginal(name);
-            if (go != null)
-                return go as T;
+            return Resources.Load<T>(path);
         }
-
         return Resources.Load<T>(path);
     }
 
@@ -30,10 +27,15 @@ public class ResourceManager
             return null;
         }
 
-        if (original.GetComponent<Poolable>() != null)
-            return Managers.Pool.Pop(original, parent).gameObject;
+        GameObject go = Managers.Pool.Pop(original);
 
-        GameObject go = Object.Instantiate(original, parent);
+        if (go != null)
+        {
+            go.transform.SetParent(parent);
+            return go;
+        }
+
+        go = Object.Instantiate(original, parent);
         go.name = original.name;
         return go;
     }
@@ -43,10 +45,9 @@ public class ResourceManager
         if (go == null)
             return;
 
-        Poolable poolable = go.GetComponent<Poolable>();
-        if (poolable != null)
+        if (Managers.Pool.Push(go))
         {
-            Managers.Pool.Push(poolable);
+            Debug.Log("찐으로 사라지진 않음");
             return;
         }
 

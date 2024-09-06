@@ -5,6 +5,20 @@ using static Define;
 
 public class DogenController : CreatureController
 {
+    public void InitDogen(Vector3Int cellPos, MoveDir dir)
+    {
+        CellPos = cellPos;
+        _lastDir = dir;
+        _dir = dir;
+        State = CreatureState.Moving;
+
+        // 위치 초기화
+        transform.position = Managers.Map.CurrentGrid.CellToWorld(CellPos) + new Vector3(0.5f, 0.5f);
+
+        // Init 메서드 호출
+        Init();
+    }
+
     protected override void Init()
     {
         // TODO 방향

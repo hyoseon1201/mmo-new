@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package Protocol;
+option csharp_namespace = "Google.Protobuf.Protocol";
+
+import public "Enum.proto";
+import public "Struct.proto";
+
+enum MsgId {
+	PERSON = 0;
+	C_CHAT = 1;
+	S_CHAT = 2;
+	S_ENTER_GAME = 3;
+}
+
+message C_Chat {
+	string context = 1;
+}
+
+message S_Chat {
+	string context = 1;
+}
+
+message S_EnterGame {
+	string context = 1;
+}
