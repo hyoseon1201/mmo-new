@@ -11,9 +11,10 @@ using System.Threading.Tasks;
 
 public class PacketHandler
 {
-    public static void C_ChatHandler(PacketSession session, IMessage message)
+    public static void C_MoveHandler(PacketSession session, IMessage packet)
     {
-        throw new NotImplementedException();
+        C_Move movePacket = packet as C_Move;
+        ClientSession clientSession = session as ClientSession;
     }
 }
 

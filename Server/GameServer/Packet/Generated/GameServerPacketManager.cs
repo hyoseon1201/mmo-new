@@ -6,9 +6,12 @@ using System.Collections.Generic;
 
 public enum MsgId
 {
-	C_Chat = 1,
-	S_Chat = 2,
-	S_EnterGame = 3,
+	S_EnterGame = 1,
+	S_LeaveGame = 2,
+	S_Spawn = 3,
+	S_Despawn = 4,
+	C_Move = 5,
+	S_Move = 6,
 }
 
 class PacketManager
@@ -30,8 +33,8 @@ class PacketManager
 
 	public void Register()
 	{		
-		_onRecv.Add((ushort)MsgId.C_Chat, MakePacket<C_Chat>);
-		_handler.Add((ushort)MsgId.C_Chat, PacketHandler.C_ChatHandler);
+		_onRecv.Add((ushort)MsgId.C_Move, MakePacket<C_Move>);
+		_handler.Add((ushort)MsgId.C_Move, PacketHandler.C_MoveHandler);
 	}
 
 	public void OnRecvPacket(PacketSession session, ArraySegment<byte> buffer)

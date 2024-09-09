@@ -175,11 +175,11 @@ public class MonsterController : CreatureController
 
             _target = Managers.Object.Find((go) =>
             {
-                PlayerController pc = go.GetComponent<PlayerController>();
-                if (pc == null)
+                HeroController hc = go.GetComponent<HeroController>();
+                if (hc == null)
                     return false;
 
-                Vector3Int dir = (pc.CellPos - CellPos);
+                Vector3Int dir = (hc.CellPos - CellPos);
                 if (dir.magnitude > _searchRange)
                     return false;
 
