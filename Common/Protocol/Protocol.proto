@@ -6,17 +6,17 @@ option csharp_namespace = "Google.Protobuf.Protocol";
 import public "Enum.proto";
 import public "Struct.proto";
 
-enum MsgId {
-	S_ENTER_GAME = 0;
-	S_LEAVE_GAME = 1;
-	S_SPAWN = 2;
-	S_DESPAWN = 3;
-	C_MOVE = 4;
-	S_MOVE = 5;
+message S_Connected 
+{
+}
+
+message C_EnterGame 
+{
 }
 
 message S_EnterGame {
-	PlayerInfo player = 1;
+	MyHeroInfo myHeroInfo = 1;
+	bool respawn = 2;
 }
 
 message S_LeaveGame {
@@ -24,27 +24,18 @@ message S_LeaveGame {
 }
 
 message S_Spawn {
-	repeated PlayerInfo players = 1;
+	repeated HeroInfo heroes = 1;
 }
 
 message S_Despawn {
-	repeated int32 playerIds = 1;
+	repeated int32 objectIds = 1;
 }
 
 message C_Move {
-	int32 posX = 1;
-	int32 posY = 2;
+	PositionInfo posInfo = 1;
 }
 
 message S_Move {
-	int32 playerId = 1;
-	int32 posX = 2;
-	int32 posY = 3;
-}
-
-message PlayerInfo {
-	int32 playerId = 1;
-	string name = 2;
-	int32 posX = 3;
-	int32 posY = 4;
+	int32 objectId = 1;
+	PositionInfo posInfo = 2;
 }

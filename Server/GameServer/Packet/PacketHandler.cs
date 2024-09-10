@@ -13,8 +13,12 @@ public class PacketHandler
 {
     public static void C_MoveHandler(PacketSession session, IMessage packet)
     {
-        C_Move movePacket = packet as C_Move;
-        ClientSession clientSession = session as ClientSession;
+        
+    }
+
+    internal static void C_EnterGameHandler(PacketSession session, IMessage message)
+    {
+        throw new NotImplementedException();
     }
 }
 

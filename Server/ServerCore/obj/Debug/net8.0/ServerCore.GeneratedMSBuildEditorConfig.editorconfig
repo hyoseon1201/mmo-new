@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ServerCore
-build_property.ProjectDir = C:\Users\hyoseon\Desktop\fsdfsd\mmo-new\Server\ServerCore\
+build_property.ProjectDir = C:\Users\hyoseon\Desktop\aheltjes\mmo-new\Server\ServerCore\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

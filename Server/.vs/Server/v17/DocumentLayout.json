@@ -1,26 +1,52 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\",
+  "WorkspaceRootPath": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\fsdfsd\\mmo-new\\server\\gameserver\\game\\gamelogic\\room\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\game\\gamelogic\\room\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\server\\gameserver\\gameserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\gameserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\fsdfsd\\mmo-new\\server\\gameserver\\game\\gamelogic\\room\\gameroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\game\\gamelogic\\room\\gameroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\gameserver\\session\\clientsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\server\\gameserver\\session\\clientsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\session\\clientsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\fsdfsd\\mmo-new\\server\\gameserver\\packet\\packethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\server\\gameserver\\utils\\define.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\utils\\define.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\server\\gameserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\server\\gameserver\\packet\\packethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\packet\\packethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\gameserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\server\\gameserver\\game\\gamelogic\\map\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\game\\gamelogic\\map\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\server\\gameserver\\game\\gamelogic\\room\\gameroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\game\\gamelogic\\room\\gameroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\server\\gameserver\\game\\gamelogic\\room\\visioncube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\game\\gamelogic\\room\\visioncube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\server\\gameserver\\game\\object\\objectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\game\\object\\objectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\server\\gameserver\\game\\object\\creature\\creature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\game\\object\\creature\\creature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\common\\protocol\\struct.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A49A978C-1245-4C94-8598-4EE241E674BA}|GameServer\\GameServer.csproj|c:\\users\\hyoseon\\desktop\\aheltjes\\mmo-new\\common\\protocol\\protocol.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,70 +61,164 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Hero.cs",
-              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\GameServer\\Game\\GameLogic\\Room\\Hero.cs",
-              "RelativeDocumentMoniker": "GameServer\\Game\\GameLogic\\Room\\Hero.cs",
-              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\GameServer\\Game\\GameLogic\\Room\\Hero.cs",
-              "RelativeToolTip": "GameServer\\Game\\GameLogic\\Room\\Hero.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T23:25:07.317Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GameRoom.cs",
-              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\GameServer\\Game\\GameLogic\\Room\\GameRoom.cs",
-              "RelativeDocumentMoniker": "GameServer\\Game\\GameLogic\\Room\\GameRoom.cs",
-              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\GameServer\\Game\\GameLogic\\Room\\GameRoom.cs",
-              "RelativeToolTip": "GameServer\\Game\\GameLogic\\Room\\GameRoom.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T12:37:43.26Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PacketHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\GameServer\\Packet\\PacketHandler.cs",
-              "RelativeDocumentMoniker": "GameServer\\Packet\\PacketHandler.cs",
-              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\GameServer\\Packet\\PacketHandler.cs",
-              "RelativeToolTip": "GameServer\\Packet\\PacketHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T12:28:39.055Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClientSession.cs",
-              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\GameServer\\Session\\ClientSession.cs",
-              "RelativeDocumentMoniker": "GameServer\\Session\\ClientSession.cs",
-              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\GameServer\\Session\\ClientSession.cs",
-              "RelativeToolTip": "GameServer\\Session\\ClientSession.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T14:02:01.805Z",
+              "Title": "GameServer",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\GameServer.csproj",
+              "RelativeDocumentMoniker": "GameServer\\GameServer.csproj",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\GameServer.csproj",
+              "RelativeToolTip": "GameServer\\GameServer.csproj",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAADQAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-10T07:21:02.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\GameServer\\Program.cs",
-              "RelativeDocumentMoniker": "GameServer\\Program.cs",
-              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\fsdfsd\\mmo-new\\Server\\GameServer\\Program.cs",
-              "RelativeToolTip": "GameServer\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAABUAAAA",
+              "Title": "PacketHandler.cs",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Packet\\PacketHandler.cs",
+              "RelativeDocumentMoniker": "GameServer\\Packet\\PacketHandler.cs",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Packet\\PacketHandler.cs",
+              "RelativeToolTip": "GameServer\\Packet\\PacketHandler.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAApwA8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T06:45:20.632Z"
+              "WhenOpened": "2024-09-10T07:14:04.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Program.cs",
+              "RelativeDocumentMoniker": "GameServer\\Program.cs",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Program.cs",
+              "RelativeToolTip": "GameServer\\Program.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAApwBoAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T06:45:20.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Define.cs",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Utils\\Define.cs",
+              "RelativeDocumentMoniker": "GameServer\\Utils\\Define.cs",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Utils\\Define.cs",
+              "RelativeToolTip": "GameServer\\Utils\\Define.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvw8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T07:13:35.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClientSession.cs",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Session\\ClientSession.cs",
+              "RelativeDocumentMoniker": "GameServer\\Session\\ClientSession.cs",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Session\\ClientSession.cs",
+              "RelativeToolTip": "GameServer\\Session\\ClientSession.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAADgvxEAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T01:45:03.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Map.cs",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Game\\GameLogic\\Map\\Map.cs",
+              "RelativeDocumentMoniker": "GameServer\\Game\\GameLogic\\Map\\Map.cs",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Game\\GameLogic\\Map\\Map.cs",
+              "RelativeToolTip": "GameServer\\Game\\GameLogic\\Map\\Map.cs",
+              "ViewState": "AQIAAHgAAAAAAAAAAADgv4UAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T05:34:45.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ObjectManager.cs",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Game\\Object\\ObjectManager.cs",
+              "RelativeDocumentMoniker": "GameServer\\Game\\Object\\ObjectManager.cs",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Game\\Object\\ObjectManager.cs",
+              "RelativeToolTip": "GameServer\\Game\\Object\\ObjectManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T05:03:59.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Struct.proto",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Common\\Protocol\\Struct.proto",
+              "RelativeDocumentMoniker": "..\\Common\\Protocol\\Struct.proto",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Common\\Protocol\\Struct.proto",
+              "RelativeToolTip": "..\\Common\\Protocol\\Struct.proto",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2024-09-10T04:42:38.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Protocol.proto",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Common\\Protocol\\Protocol.proto",
+              "RelativeDocumentMoniker": "..\\Common\\Protocol\\Protocol.proto",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Common\\Protocol\\Protocol.proto",
+              "RelativeToolTip": "..\\Common\\Protocol\\Protocol.proto",
+              "ViewState": "AQIAABUAAAAAAAAAAADwvygAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2024-09-09T07:11:39.521Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VisionCube.cs",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Game\\GameLogic\\Room\\VisionCube.cs",
+              "RelativeDocumentMoniker": "GameServer\\Game\\GameLogic\\Room\\VisionCube.cs",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Game\\GameLogic\\Room\\VisionCube.cs",
+              "RelativeToolTip": "GameServer\\Game\\GameLogic\\Room\\VisionCube.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA4wDMAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T06:35:28.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Creature.cs",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Game\\Object\\Creature\\Creature.cs",
+              "RelativeDocumentMoniker": "GameServer\\Game\\Object\\Creature\\Creature.cs",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Game\\Object\\Creature\\Creature.cs",
+              "RelativeToolTip": "GameServer\\Game\\Object\\Creature\\Creature.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T06:21:58.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GameRoom.cs",
+              "DocumentMoniker": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Game\\GameLogic\\Room\\GameRoom.cs",
+              "RelativeDocumentMoniker": "GameServer\\Game\\GameLogic\\Room\\GameRoom.cs",
+              "ToolTip": "C:\\Users\\hyoseon\\Desktop\\aheltjes\\mmo-new\\Server\\GameServer\\Game\\GameLogic\\Room\\GameRoom.cs",
+              "RelativeToolTip": "GameServer\\Game\\GameLogic\\Room\\GameRoom.cs",
+              "ViewState": "AQIAANcAAAAAAAAAAAAtwOkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T12:37:43.26Z",
+              "EditorCaption": ""
             }
           ]
         }

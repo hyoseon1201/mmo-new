@@ -246,7 +246,8 @@
             #if UNITY_EDITOR
                 public string DynamicTitle2
                 {
-                    get { return UnityEditor.PlayerSettings.productName; }
+                    get { return UnityEditor.
+					Settings.productName; }
                 }
             #endif
             

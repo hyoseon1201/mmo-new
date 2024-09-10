@@ -50,7 +50,7 @@
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="call $(SolutionDir)GenProto.bat $(SolutionDir) \Client\Assets\Scripts\Packet\Generated\ 0" />
+    <Exec Command="call $(SolutionDir)GenProto.bat $(SolutionDir) \Client\Assets\@Scripts\Packet\Generated\ 0" />
   </Target>
 
 </Project>
