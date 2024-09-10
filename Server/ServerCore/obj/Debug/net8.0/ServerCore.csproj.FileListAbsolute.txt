@@ -22,3 +22,15 @@ C:\Users\hyoseon\Desktop\fsdfsd\mmo-new\Server\ServerCore\obj\Debug\net8.0\Serve
 C:\Users\hyoseon\Desktop\fsdfsd\mmo-new\Server\ServerCore\obj\Debug\net8.0\refint\ServerCore.dll
 C:\Users\hyoseon\Desktop\fsdfsd\mmo-new\Server\ServerCore\obj\Debug\net8.0\ServerCore.pdb
 C:\Users\hyoseon\Desktop\fsdfsd\mmo-new\Server\ServerCore\obj\Debug\net8.0\ref\ServerCore.dll
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\bin\Debug\net8.0\ServerCore.deps.json
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\bin\Debug\net8.0\ServerCore.dll
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\bin\Debug\net8.0\ServerCore.pdb
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\obj\Debug\net8.0\ServerCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\obj\Debug\net8.0\ServerCore.AssemblyInfoInputs.cache
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\obj\Debug\net8.0\ServerCore.AssemblyInfo.cs
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\obj\Debug\net8.0\ServerCore.csproj.CoreCompileInputs.cache
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\obj\Debug\net8.0\ServerCore.sourcelink.json
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\obj\Debug\net8.0\ServerCore.dll
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\obj\Debug\net8.0\refint\ServerCore.dll
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\obj\Debug\net8.0\ServerCore.pdb
+C:\Users\hyoseon\Desktop\realfdsef\mmo-new\Server\ServerCore\obj\Debug\net8.0\ref\ServerCore.dll

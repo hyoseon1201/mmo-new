@@ -1,5 +1,5 @@
 {
-  "dataPath": "../../../../../Client/Assets/Resources/Data/",
+  "dataPath": "../../../../../Client/Assets/@Resources/Data/",
   "ip": "127.0.0.1",
   "port": "7777",
   "connectionString": "Server=localhost;Port=3306;Database=gamedb;Uid=root;Pwd=qwer1234!;"

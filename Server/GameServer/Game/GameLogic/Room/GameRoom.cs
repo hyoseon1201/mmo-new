@@ -9,7 +9,7 @@ using Google.Protobuf.Protocol;
 
 namespace GameServer
 {
-    public class GameRoom : JobSerializer
+    public partial class GameRoom : JobSerializer
     {
         public const int VisionCells = 10;
         public int GameRoomId { get; set; }
