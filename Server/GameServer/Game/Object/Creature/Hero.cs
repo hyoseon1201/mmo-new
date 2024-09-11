@@ -29,7 +29,9 @@ namespace GameServer
             MyHeroInfo.HeroInfo = HeroInfo;
             HeroInfo.CreatureInfo = CreatureInfo;
 
+            ObjectType = EGameObjectType.Hero;
 
+            Vision = new VisionCubeComponent(this);
         }
     }
 }

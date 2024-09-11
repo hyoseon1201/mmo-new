@@ -117,7 +117,7 @@ namespace GameServer
 
         public void LoadMap()
         {
-            string mapName = "MMO_edu_mapCollision"; // TEMP
+            string mapName = "Map_001Collision"; // TEMP
             string text = File.ReadAllText($"{ConfigManager.Config.dataPath}/MapData/{mapName}.txt");
             StringReader reader = new StringReader(text);
 

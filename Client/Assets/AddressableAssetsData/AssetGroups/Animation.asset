@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Animation
+  m_EditorClassIdentifier: 
+  m_GroupName: Animation
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d7d5b3cba26a79d45918a5cb94a75e09
+  m_SerializeEntries: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 7646d177eb9d0ba4b8ffd989e3babc93, type: 2}
+  m_SchemaSet:
+    m_Schemas: []

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameServer
 {
-    public class ObjectManager
+    public class ObjectManager : Singleton<ObjectManager>
     {
         object _lock = new object();
         Dictionary<int, Hero> _heroes = new Dictionary<int, Hero>();

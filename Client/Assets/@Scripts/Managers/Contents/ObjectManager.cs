@@ -6,6 +6,43 @@ using UnityEngine;
 
 public class ObjectManager
 {
+    public MyHero MyHero { get; set; }
+    Dictionary<int, GameObject> _objects = new Dictionary<int, GameObject>();
+
+    #region Roots
+
+    public Transform GetRootTransform(string name)
+    {
+        GameObject root = GameObject.Find(name);
+        if (root == null)
+            root = new GameObject { name = name };
+        return root.transform;
+    }
+
+    public Transform HeroRoot { get { return GetRootTransform("@Heroes"); } }
+    public Transform MonsterRoot { get { return GetRootTransform("@Monsters"); } }
+
+    
+    public ObjectManager()
+    {
+
+    }
+
+    public MyHero Spawn(MyHeroInfo myHeroInfo)
+    {
+        HeroInfo info = myHeroInfo.HeroInfo;
+        ObjectInfo objectInfo = info.CreatureInfo.ObjectInfo;
+        EGameObjectType objectType = Utils.GetObjectTypeFromId(objectInfo.ObjectId);
+        GameObject go = Managers.Resource.Instantiate("Hero"); // TEMP		
+        go.name = info.Name;
+        go.transform.parent = HeroRoot;
+        _objects.Add(objectInfo.ObjectId, go);
+        MyHero = Utils.GetOrAddComponent<MyHero>(go);
+        return MyHero;
+    }
+
+    #endregion
+
     //public MyHeroController MyHero { get; set; }
     //Dictionary<int, GameObject> _objects = new Dictionary<int, GameObject>();
 

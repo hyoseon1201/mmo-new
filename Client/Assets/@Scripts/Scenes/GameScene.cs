@@ -1,43 +1,36 @@
+using Google.Protobuf.Protocol;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameScene : BaseScene
 {
-    protected override void Init()
+    protected override void Awake()
     {
-        base.Init();
+        base.Awake();
 
         SceneType = Define.EScene.GameScene;
 
-        Managers.Map.LoadMap("asdf");
+        Managers.Map.LoadMap("Map_001");
 
-        Screen.SetResolution(640, 480, false);
+        C_EnterGame enterGame = new C_EnterGame();
+        Managers.Network.Send(enterGame);
 
-        //GameObject hero = Managers.Resource.Instantiate("Creature/Hero");
-        //hero.name = "Hero";
-        //Managers.Object.Add(hero);
+        
+    }
 
-        //for (int i = 0; i < 5; i++)
-        //{
-        //    GameObject monster = Managers.Resource.Instantiate("Creature/Monster");
-        //    monster.name = $"Monster_{i + 1}";
-
-        //    Vector3Int pos = new Vector3Int()
-        //    {
-        //        x = Random.Range(-10, 10),
-        //        y = Random.Range(-10, 10)
-        //    };
-
-        //    MonsterController mc = monster.GetComponent<MonsterController>();
-        //    mc.CellPos = pos;
-
-        //    Managers.Object.Add(monster);
-        //}
+    protected override void Start()
+    {
+        base.Start();
     }
 
     public override void Clear()
     {
 
+    }
+
+    void OnApplicationQuit()
+    {
+        Managers.Network.GameServer.Disconnect();
     }
 }
