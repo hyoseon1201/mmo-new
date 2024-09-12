@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero : Creature
+public class Hero : BaseObject
 {
     protected override void Awake()
     {
@@ -19,20 +19,13 @@ public class Hero : Creature
     protected override void Update()
     {
         base.Update();
-
-        // FSM 상태관리
-        UpdateAI();
-
-        UpdateLerpToCellPos(_moveSpeed);
     }
 
-    protected override void UpdateMove()
+    protected override void UpdateIdle()
     {
-        base.UpdateMove();
-
-        if (LerpCellPosCompleted)
+        if (Dir != EMoveDir.None)
         {
-            ObjectState = EObjectState.Idle;
+            State = EObjectState.Move;
             return;
         }
     }

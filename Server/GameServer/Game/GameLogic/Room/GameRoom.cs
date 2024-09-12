@@ -169,13 +169,14 @@ namespace GameServer
 
             foreach (Hero p in zones.SelectMany(z => z.Heroes))
             {
+                
                 int dx = p.CellPos.x - pos.x;
                 int dy = p.CellPos.y - pos.y;
                 if (Math.Abs(dx) > GameRoom.VisionCells)
                     continue;
                 if (Math.Abs(dy) > GameRoom.VisionCells)
                     continue;
-
+                Console.WriteLine($"BroadcastMove {p.Name} : {p.ObjectId}");
                 p.Session?.Send(packetBuffer);
             }
         }

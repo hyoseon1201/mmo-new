@@ -22,108 +22,158 @@ public class ObjectManager
     public Transform HeroRoot { get { return GetRootTransform("@Heroes"); } }
     public Transform MonsterRoot { get { return GetRootTransform("@Monsters"); } }
 
-    
+    #endregion
+
+
     public ObjectManager()
     {
-
     }
 
     public MyHero Spawn(MyHeroInfo myHeroInfo)
     {
         HeroInfo info = myHeroInfo.HeroInfo;
+        if (info == null || info.CreatureInfo == null || info.CreatureInfo.ObjectInfo == null)
+            return null;
         ObjectInfo objectInfo = info.CreatureInfo.ObjectInfo;
+        if (MyHero != null && MyHero.ObjectId == objectInfo.ObjectId)
+            return null;
+        if (_objects.ContainsKey(objectInfo.ObjectId))
+            return null;
         EGameObjectType objectType = Utils.GetObjectTypeFromId(objectInfo.ObjectId);
+        if (objectType != EGameObjectType.Hero)
+            return null;
+
         GameObject go = Managers.Resource.Instantiate("Hero"); // TEMP		
         go.name = info.Name;
         go.transform.parent = HeroRoot;
         _objects.Add(objectInfo.ObjectId, go);
+
         MyHero = Utils.GetOrAddComponent<MyHero>(go);
+        MyHero.ObjectId = objectInfo.ObjectId;
+        MyHero.PosInfo = objectInfo.PosInfo;
+
+        MyHero.SyncWorldPosWithCellPos();
+
         return MyHero;
     }
 
-    #endregion
+    public Hero Spawn(HeroInfo info)
+    {
+        if (info == null || info.CreatureInfo == null || info.CreatureInfo.ObjectInfo == null)
+            return null;
+        ObjectInfo objectInfo = info.CreatureInfo.ObjectInfo;
+        if (MyHero.ObjectId == objectInfo.ObjectId)
+            return null;
+        if (_objects.ContainsKey(objectInfo.ObjectId))
+            return null;
+        EGameObjectType objectType = Utils.GetObjectTypeFromId(objectInfo.ObjectId);
+        if (objectType != EGameObjectType.Hero)
+            return null;
 
-    //public MyHeroController MyHero { get; set; }
-    //Dictionary<int, GameObject> _objects = new Dictionary<int, GameObject>();
+        GameObject go = Managers.Resource.Instantiate("Hero"); // TEMP
+        go.name = info.Name;
+        go.transform.parent = HeroRoot;
+        _objects.Add(objectInfo.ObjectId, go);
 
-    //public void Add(HeroInfo info, bool myHero = false)
-    //{
-    //    if (myHero)
-    //    {
-    //        GameObject go = Managers.Resource.Instantiate("Creature/MyHero");
-    //        go.name = info.Name;
-    //        _objects.Add(info.HeroId, go);
+        Hero hero = Utils.GetOrAddComponent<Hero>(go);
+        hero.ObjectId = objectInfo.ObjectId;
+        hero.PosInfo = objectInfo.PosInfo;
+        hero.SetInfo(1);
 
-    //        MyHero = go.GetComponent<MyHeroController>();
-    //        MyHero.Id = info.HeroId;
-    //        MyHero.PosInfo = info.PosInfo;
-    //    }
-    //    else
-    //    {
-    //        GameObject go = Managers.Resource.Instantiate("Creature/Hero");
-    //        go.name = info.Name;
-    //        _objects.Add(info.HeroId, go);
+        hero.SyncWorldPosWithCellPos();
 
-    //        HeroController hc = go.GetComponent<HeroController>();
-    //        hc.Id = info.HeroId;
-    //        hc.PosInfo = info.PosInfo;
-    //    }
-    //}
+        return hero;
+    }
 
-    //public void Add(int id, GameObject go)
-    //{
-    //    _objects.Add(id, go);
-    //}
+    public void Despawn(int objectId)
+    {
+        if (MyHero != null && MyHero.ObjectId == objectId)
+            return;
+        if (_objects.ContainsKey(objectId) == false)
+            return;
 
-    //public void Remove(int id)
-    //{
-    //    _objects.Remove(id);
-    //}
+        GameObject go = FindById(objectId);
+        if (go == null)
+            return;
 
-    //public void RemoveMyHero()
-    //{
-    //    if (MyHero == null)
-    //        return;
+        BaseObject bo = go.GetComponent<BaseObject>();
+        if (bo != null)
+        {
 
-    //    Remove(MyHero.Id);
-    //    MyHero = null;
-    //}
+        }
 
-    //public GameObject FindById(int id)
-    //{
-    //    GameObject go = null;
-    //    _objects.TryGetValue(id, out go);
-    //    return go;
-    //}
+        _objects.Remove(objectId);
+        Managers.Resource.Destroy(go);
+    }
 
-    //public GameObject Find(Vector3Int cellPos)
-    //{
-    //    foreach (GameObject obj in _objects.Values)
-    //    {
-    //        CreatureController cc = obj.GetComponent<CreatureController>();
-    //        if (cc == null)
-    //            continue;
+    public GameObject FindById(int id)
+    {
+        GameObject go = null;
+        _objects.TryGetValue(id, out go);
+        return go;
+    }
 
-    //        if (cc.CellPos == cellPos)
-    //            return obj;
-    //    }
+    public GameObject FindCreature(Vector3Int cellPos)
+    {
+        foreach (GameObject obj in _objects.Values)
+        {
+            Creature creature = obj.GetComponent<Creature>();
+            if (creature == null)
+                continue;
 
-    //    return null;
-    //}
+            //if (creature.CellPos == cellPos)
+            //	return obj;
+        }
 
-    //public GameObject Find(Func<GameObject, bool> condition)
-    //{
-    //    foreach (GameObject obj in _objects.Values)
-    //    {
-    //        if (condition.Invoke(obj))
-    //            return obj;
-    //    }
+        return null;
+    }
 
-    //    return null;
-    //}
+    public GameObject Find(Vector3Int cellPos)
+    {
+        foreach (GameObject obj in _objects.Values)
+        {
+            BaseObject bo = obj.GetComponent<BaseObject>();
+            if (bo == null)
+                continue;
 
-    //public void Clear()
-    //{
-    //    _objects.Clear();
-    //}
+            if (bo.CellPos == cellPos)
+                return obj;
+        }
+
+        return null;
+    }
+
+    public GameObject Find(Func<GameObject, bool> condition)
+    {
+        foreach (GameObject obj in _objects.Values)
+        {
+            if (condition.Invoke(obj))
+                return obj;
+        }
+
+        return null;
+    }
+
+    public List<T> FindAllComponents<T>(Func<T, bool> condition) where T : UnityEngine.Component
+    {
+        List<T> ret = new List<T>();
+
+        foreach (GameObject obj in _objects.Values)
+        {
+            T t = Utils.FindChild<T>(obj, recursive: true);
+            if (t != null && condition.Invoke(t))
+                ret.Add(t);
+        }
+
+        return ret;
+    }
+
+    public void Clear()
+    {
+        foreach (GameObject obj in _objects.Values)
+            Managers.Resource.Destroy(obj);
+
+        _objects.Clear();
+        MyHero = null;
+    }
 }
