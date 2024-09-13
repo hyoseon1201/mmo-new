@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero : BaseObject
+public class Hero : Creature
 {
     protected override void Awake()
     {

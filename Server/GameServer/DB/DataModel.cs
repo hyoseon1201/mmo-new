@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace GameServer
 {
-    public class HeroData
+    public class HeroDb
     {
         public int Id { get; set; }
         public long AccountId { get; set; }
         public DateTime CreateDate { get; set; }
     }
 
-    public class ItemData
+    public class ItemDb
     {
         public long Id { get; set; }
         public int TemplateId { get; set; }

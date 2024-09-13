@@ -5,28 +5,30 @@ using UnityEngine;
 
 public class UI_TitleScene : UI_Scene
 {
-    private enum GameObjects
+    private enum EGameObjects
     {
         StartButton,
     }
 
-    private enum Texts
+    private enum ETexts
     {
         StatusText,
     }
 
-    private enum TitleSceneState
+    private enum ETitleSceneState
     {
         None,
         AssetLoading,
         AssetLoaded,
+        LoginSuccess,
+        LoginFailure,
         ConnectingToServer,
         ConnectedToServer,
         FailedToConnectToServer
     }
 
-    TitleSceneState _state = TitleSceneState.None;
-    TitleSceneState State
+    ETitleSceneState _state = ETitleSceneState.None;
+    ETitleSceneState State
     {
         get { return _state; }
         set
@@ -34,22 +36,22 @@ public class UI_TitleScene : UI_Scene
             _state = value;
             switch (value)
             {
-                case TitleSceneState.None:
+                case ETitleSceneState.None:
                     break;
-                case TitleSceneState.AssetLoading:
-                    GetText((int)Texts.StatusText).text = $"TODO 로딩중";
+                case ETitleSceneState.AssetLoading:
+                    GetText((int)ETexts.StatusText).text = $"TODO 로딩중";
                     break;
-                case TitleSceneState.AssetLoaded:
-                    GetText((int)Texts.StatusText).text = "TODO 로딩 완료";
+                case ETitleSceneState.AssetLoaded:
+                    GetText((int)ETexts.StatusText).text = "TODO 로딩 완료";
                     break;
-                case TitleSceneState.ConnectingToServer:
-                    GetText((int)Texts.StatusText).text = "TODO 서버 접속중";
+                case ETitleSceneState.ConnectingToServer:
+                    GetText((int)ETexts.StatusText).text = "TODO 서버 접속중";
                     break;
-                case TitleSceneState.ConnectedToServer:
-                    GetText((int)Texts.StatusText).text = "TODO 서버 접속 성공";
+                case ETitleSceneState.ConnectedToServer:
+                    GetText((int)ETexts.StatusText).text = "TODO 서버 접속 성공";
                     break;
-                case TitleSceneState.FailedToConnectToServer:
-                    GetText((int)Texts.StatusText).text = "TODO 서버 접속 실패";
+                case ETitleSceneState.FailedToConnectToServer:
+                    GetText((int)ETexts.StatusText).text = "TODO 서버 접속 실패";
                     break;
             }
         }
@@ -59,27 +61,27 @@ public class UI_TitleScene : UI_Scene
     {
         base.Awake();
 
-        BindObjects(typeof(GameObjects));
-        BindTexts(typeof(Texts));
+        BindObjects(typeof(EGameObjects));
+        BindTexts(typeof(ETexts));
 
-        GetObject((int)GameObjects.StartButton).BindEvent((evt) =>
+        GetObject((int)EGameObjects.StartButton).BindEvent((evt) =>
         {
             Managers.Scene.LoadScene(Define.EScene.GameScene);
         });
 
-        GetObject((int)GameObjects.StartButton).gameObject.SetActive(false);
+        GetObject((int)EGameObjects.StartButton).gameObject.SetActive(false);
     }
 
     protected override void Start()
     {
         base.Start();
 
-        State = TitleSceneState.AssetLoading;
+        State = ETitleSceneState.AssetLoading;
 
         Managers.Resource.LoadAllAsync<Object>("Preload", (key, count, totalCount) =>
         {
             Debug.Log("count");
-            GetText((int)Texts.StatusText).text = $"TODO 로딩중 : {key} {count}/{totalCount}";
+            GetText((int)ETexts.StatusText).text = $"TODO 로딩중 : {key} {count}/{totalCount}";
 
             if (count == totalCount)
             {
@@ -90,31 +92,40 @@ public class UI_TitleScene : UI_Scene
 
     private void OnAssetLoaded()
     {
-        State = TitleSceneState.AssetLoaded;
+        State = ETitleSceneState.AssetLoaded;
         Managers.Data.Init();
 
-        Debug.Log("Connecting To Server");
-        State = TitleSceneState.ConnectingToServer;
+        UI_LoginPopup popup = Managers.UI.ShowPopupUI<UI_LoginPopup>();
+        popup.SetInfo(OnLoginSuccess);
 
-        IPAddress ipAddr = IPAddress.Parse("127.0.0.1");
-        IPEndPoint endPoint = new IPEndPoint(ipAddr, 7777);
-        Managers.Network.GameServer.Connect(endPoint, 
-            onSuccessCallback: OnConnectionSuccess, 
-            onFailedCallback: OnConnectionFailed);
+        //Debug.Log("Connecting To Server");
+        //State = TitleSceneState.ConnectingToServer;
 
+        //IPAddress ipAddr = IPAddress.Parse("127.0.0.1");
+        //IPEndPoint endPoint = new IPEndPoint(ipAddr, 7777);
+        //Managers.Network.GameServer.Connect(endPoint, 
+        //    onSuccessCallback: OnConnectionSuccess, 
+        //    onFailedCallback: OnConnectionFailed);
+
+    }
+
+    private void OnLoginSuccess(bool isSuccess)
+    {
+        if (isSuccess)
+            State = ETitleSceneState.LoginSuccess;
     }
 
     private void OnConnectionSuccess()
     {
         Debug.Log("Connected To Server");
-        State = TitleSceneState.ConnectedToServer;
+        State = ETitleSceneState.ConnectedToServer;
 
-        GetObject((int)GameObjects.StartButton).gameObject.SetActive(true);
+        GetObject((int)EGameObjects.StartButton).gameObject.SetActive(true);
     }
 
     private void OnConnectionFailed()
     {
         Debug.Log("Failed To Connect To Server");
-        State = TitleSceneState.FailedToConnectToServer;
+        State = ETitleSceneState.FailedToConnectToServer;
     }
 }

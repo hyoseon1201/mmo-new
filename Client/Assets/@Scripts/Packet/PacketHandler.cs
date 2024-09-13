@@ -56,10 +56,10 @@ class PacketHandler
 
         if (go == null) return;
 
-        BaseObject bo = go.GetComponent<BaseObject>();
+        Creature cc = go.GetComponent<Creature>();
 
-        if (bo == null) return;
-        bo.PosInfo = movePacket.PosInfo;
+        if (cc == null) return;
+        cc.PosInfo = movePacket.PosInfo;
     }
 }
 

@@ -209,11 +209,6 @@ public class BaseObject : MonoBehaviour
 
     protected virtual void Update()
     {
-        UpdateController();
-    }
-
-    protected virtual void UpdateController()
-    {
         switch (State)
         {
             case EObjectState.Idle:
@@ -255,17 +250,17 @@ public class BaseObject : MonoBehaviour
         }
     }
 
-    protected virtual void MoveToNextPos()
-    {
-
-    }
-
     protected virtual void UpdateSkill()
     {
 
     }
 
     protected virtual void UpdateDead()
+    {
+
+    }
+
+    protected virtual void MoveToNextPos()
     {
 
     }
