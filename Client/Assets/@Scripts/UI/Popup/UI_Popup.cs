@@ -10,7 +10,7 @@ public class UI_Popup : UI_Base
     {
         base.Awake();
 
-        Managers.UI.SetCanvas(gameObject, true);
+        UICanvas = Managers.UI.SetCanvas(gameObject, true);
     }
 
     public virtual void ClosePopupUI()

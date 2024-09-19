@@ -125,6 +125,7 @@ public class MapManager
 
     public bool MoveTo(BaseObject obj, Vector3Int cellPos, bool forceMove = false)
     {
+        Debug.Log(cellPos);
         if (CanGo(obj, cellPos) == false)
             return false;
 

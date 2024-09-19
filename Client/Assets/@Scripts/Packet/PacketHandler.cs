@@ -18,6 +18,7 @@ class PacketHandler
         Debug.Log("S_EnterGameHandler");
 
         S_EnterGame enterGamePacket = packet as S_EnterGame;
+        
         MyHero myHero = Managers.Object.Spawn(enterGamePacket.MyHeroInfo);
         //myHero.SetInfo(1); // TEMP
         myHero.State = EObjectState.Idle;

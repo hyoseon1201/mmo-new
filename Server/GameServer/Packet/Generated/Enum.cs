@@ -40,11 +40,14 @@ namespace Google.Protobuf.Protocol {
             "SU5EX1BBVEhfUkVTVUxUX0ZBSUxfTEVSUENFTEwQARIiCh5FRklORF9QQVRI",
             "X1JFU1VMVF9GQUlMX05PX1BBVEgQAhIiCh5FRklORF9QQVRIX1JFU1VMVF9G",
             "QUlMX01PVkVfVE8QAxIoCiRFRklORF9QQVRIX1JFU1VMVF9GQUlMX1NBTUVf",
-            "UE9TSVRJT04QBBIdChlFRklORF9QQVRIX1JFU1VMVF9TVUNDRVNTEAVCG6oC",
-            "GEdvb2dsZS5Qcm90b2J1Zi5Qcm90b2NvbGIGcHJvdG8z"));
+            "UE9TSVRJT04QBBIdChlFRklORF9QQVRIX1JFU1VMVF9TVUNDRVNTEAUqggEK",
+            "CkVIZXJvQ2xhc3MSFAoQRUhFUk9fQ0xBU1NfTk9ORRAAEhcKE0VIRVJPX0NM",
+            "QVNTX1dBUlJJT1IQARIWChJFSEVST19DTEFTU19SQU5HRVIQAhIWChJFSEVS",
+            "T19DTEFTU19XSVpBUkQQAxIVChFFSEVST19DTEFTU19ST0dVRRAEQhuqAhhH",
+            "b29nbGUuUHJvdG9idWYuUHJvdG9jb2xiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.Protocol.EObjectState), typeof(global::Google.Protobuf.Protocol.EMoveDir), typeof(global::Google.Protobuf.Protocol.EGameObjectType), typeof(global::Google.Protobuf.Protocol.ECellCollisionType), typeof(global::Google.Protobuf.Protocol.EFindPathResult), }, null, null));
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.Protocol.EObjectState), typeof(global::Google.Protobuf.Protocol.EMoveDir), typeof(global::Google.Protobuf.Protocol.EGameObjectType), typeof(global::Google.Protobuf.Protocol.ECellCollisionType), typeof(global::Google.Protobuf.Protocol.EFindPathResult), typeof(global::Google.Protobuf.Protocol.EHeroClass), }, null, null));
     }
     #endregion
 
@@ -86,6 +89,14 @@ namespace Google.Protobuf.Protocol {
     [pbr::OriginalName("EFIND_PATH_RESULT_FAIL_MOVE_TO")] FailMoveTo = 3,
     [pbr::OriginalName("EFIND_PATH_RESULT_FAIL_SAME_POSITION")] FailSamePosition = 4,
     [pbr::OriginalName("EFIND_PATH_RESULT_SUCCESS")] Success = 5,
+  }
+
+  public enum EHeroClass {
+    [pbr::OriginalName("EHERO_CLASS_NONE")] None = 0,
+    [pbr::OriginalName("EHERO_CLASS_WARRIOR")] Warrior = 1,
+    [pbr::OriginalName("EHERO_CLASS_RANGER")] Ranger = 2,
+    [pbr::OriginalName("EHERO_CLASS_WIZARD")] Wizard = 3,
+    [pbr::OriginalName("EHERO_CLASS_ROGUE")] Rogue = 4,
   }
 
   #endregion

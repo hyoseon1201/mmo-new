@@ -7,12 +7,13 @@ public class UI_TitleScene : UI_Scene
 {
     private enum EGameObjects
     {
+        ServerConnectButton,
         StartButton,
     }
 
     private enum ETexts
     {
-        StatusText,
+        StatusText
     }
 
     private enum ETitleSceneState
@@ -34,6 +35,7 @@ public class UI_TitleScene : UI_Scene
         set
         {
             _state = value;
+            
             switch (value)
             {
                 case ETitleSceneState.None:
@@ -43,6 +45,12 @@ public class UI_TitleScene : UI_Scene
                     break;
                 case ETitleSceneState.AssetLoaded:
                     GetText((int)ETexts.StatusText).text = "TODO 로딩 완료";
+                    break;
+                case ETitleSceneState.LoginSuccess:
+                    GetText((int)ETexts.StatusText).text = "TODO 로그인 성공!";
+                    break;
+                case ETitleSceneState.LoginFailure:
+                    GetText((int)ETexts.StatusText).text = "TODO 로그인 실패";
                     break;
                 case ETitleSceneState.ConnectingToServer:
                     GetText((int)ETexts.StatusText).text = "TODO 서버 접속중";
@@ -69,7 +77,14 @@ public class UI_TitleScene : UI_Scene
             Managers.Scene.LoadScene(Define.EScene.GameScene);
         });
 
+        GetObject((int)EGameObjects.ServerConnectButton).BindEvent((evt) =>
+        {
+            ConnectToGameServer();
+        });
+
+
         GetObject((int)EGameObjects.StartButton).gameObject.SetActive(false);
+        GetObject((int)EGameObjects.ServerConnectButton).gameObject.SetActive(false);
     }
 
     protected override void Start()
@@ -112,7 +127,21 @@ public class UI_TitleScene : UI_Scene
     private void OnLoginSuccess(bool isSuccess)
     {
         if (isSuccess)
+        {
             State = ETitleSceneState.LoginSuccess;
+            GetObject((int)EGameObjects.ServerConnectButton).gameObject.SetActive(true);
+        }
+        else
+            State = ETitleSceneState.LoginFailure;
+    }
+
+    private void ConnectToGameServer()
+    {
+        State = ETitleSceneState.ConnectingToServer;
+        IPAddress ipAddr = IPAddress.Parse("127.0.0.1");
+        IPEndPoint endPoint = new IPEndPoint(ipAddr, 7777);
+        Managers.Network.GameServer.Connect(endPoint, OnConnectionSuccess);
+        GetObject((int)EGameObjects.ServerConnectButton).gameObject.SetActive(false);
     }
 
     private void OnConnectionSuccess()

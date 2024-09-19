@@ -84,7 +84,6 @@ namespace GameServer
                     S_EnterGame enterPacket = new S_EnterGame();
                     enterPacket.MyHeroInfo = hero.MyHeroInfo;
                     enterPacket.Respawn = respawn;
-
                     hero.Session?.Send(enterPacket);
 
                     hero.Vision?.Update();

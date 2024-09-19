@@ -10,6 +10,10 @@ public class Managers : MonoBehaviour
 
     public static Managers Instance { get { Init(); return s_instance; } }
 
+    // ÀÎÁõ
+    public static int AccountDbId { get; set; }
+    public static string AccessToken { get; set; }
+
     #region Contents
 
     private GameManager _game = new GameManager();

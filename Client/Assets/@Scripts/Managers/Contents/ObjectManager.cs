@@ -77,6 +77,7 @@ public class ObjectManager
 
         Hero hero = Utils.GetOrAddComponent<Hero>(go);
         hero.ObjectId = objectInfo.ObjectId;
+        Debug.Log("스폰패킷 pos : " + objectInfo.PosInfo);
         hero.PosInfo = objectInfo.PosInfo;
         hero.SetInfo(1);
 

@@ -194,8 +194,6 @@ public class BaseObject : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _sprite = GetComponent<SpriteRenderer>();
-        Vector3 pos = Managers.Map.Cell2World(CellPos) + new Vector3(0.5f, 0.5f);
-        transform.position = pos;
 
         State = EObjectState.Idle;
         Dir = EMoveDir.None;
@@ -204,7 +202,6 @@ public class BaseObject : MonoBehaviour
 
     protected virtual void Start()
     {
-
     }
 
     protected virtual void Update()
@@ -278,6 +275,7 @@ public class BaseObject : MonoBehaviour
         if (forceMove)
         {
             transform.position = Managers.Map.Cell2World(CellPos);
+            transform.position += new Vector3(0.5f, 0.5f);
             _updated = true;
         }
     }

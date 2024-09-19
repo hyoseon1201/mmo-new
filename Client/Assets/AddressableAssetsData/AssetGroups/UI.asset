@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d214514dc2404494297c147a30134c24
+    m_Address: UI_LoginPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7646d177eb9d0ba4b8ffd989e3babc93, type: 2}
   m_SchemaSet:

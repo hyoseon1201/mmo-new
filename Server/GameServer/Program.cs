@@ -55,9 +55,6 @@ namespace GameServer
                 t.Start();
             }
 
-            // DB Test
-            DBManager.Instance.Push(DBManager.TestDB);
-
             // GameLogic
             Thread.CurrentThread.Name = "GameLogic";
             GameLogicTask();
