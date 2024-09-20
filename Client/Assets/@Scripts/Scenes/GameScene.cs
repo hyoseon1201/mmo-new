@@ -1,7 +1,4 @@
 using Google.Protobuf.Protocol;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class GameScene : BaseScene
 {
@@ -15,8 +12,6 @@ public class GameScene : BaseScene
 
         C_EnterGame enterGame = new C_EnterGame();
         Managers.Network.Send(enterGame);
-
-        
     }
 
     protected override void Start()

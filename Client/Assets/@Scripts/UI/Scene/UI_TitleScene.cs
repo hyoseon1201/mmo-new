@@ -1,3 +1,4 @@
+using Google.Protobuf.Protocol;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
@@ -19,10 +20,13 @@ public class UI_TitleScene : UI_Scene
     private enum ETitleSceneState
     {
         None,
+        // 에셋 로딩
         AssetLoading,
         AssetLoaded,
+        // 인증
         LoginSuccess,
         LoginFailure,
+        // 서버 접속
         ConnectingToServer,
         ConnectedToServer,
         FailedToConnectToServer
@@ -74,7 +78,8 @@ public class UI_TitleScene : UI_Scene
 
         GetObject((int)EGameObjects.StartButton).BindEvent((evt) =>
         {
-            Managers.Scene.LoadScene(Define.EScene.GameScene);
+            //Managers.Scene.LoadScene(Define.EScene.GameScene);
+            UI_SelectCharacterPopup popup = Managers.UI.ShowPopupUI<UI_SelectCharacterPopup>();
         });
 
         GetObject((int)EGameObjects.ServerConnectButton).BindEvent((evt) =>
@@ -96,7 +101,7 @@ public class UI_TitleScene : UI_Scene
         Managers.Resource.LoadAllAsync<Object>("Preload", (key, count, totalCount) =>
         {
             Debug.Log("count");
-            GetText((int)ETexts.StatusText).text = $"TODO 로딩중 : {key} {count}/{totalCount}";
+            GetText((int)ETexts.StatusText).text = $"데이터 로딩중 : {key} {count}/{totalCount}";
 
             if (count == totalCount)
             {
@@ -112,16 +117,6 @@ public class UI_TitleScene : UI_Scene
 
         UI_LoginPopup popup = Managers.UI.ShowPopupUI<UI_LoginPopup>();
         popup.SetInfo(OnLoginSuccess);
-
-        //Debug.Log("Connecting To Server");
-        //State = TitleSceneState.ConnectingToServer;
-
-        //IPAddress ipAddr = IPAddress.Parse("127.0.0.1");
-        //IPEndPoint endPoint = new IPEndPoint(ipAddr, 7777);
-        //Managers.Network.GameServer.Connect(endPoint, 
-        //    onSuccessCallback: OnConnectionSuccess, 
-        //    onFailedCallback: OnConnectionFailed);
-
     }
 
     private void OnLoginSuccess(bool isSuccess)
@@ -140,7 +135,7 @@ public class UI_TitleScene : UI_Scene
         State = ETitleSceneState.ConnectingToServer;
         IPAddress ipAddr = IPAddress.Parse("127.0.0.1");
         IPEndPoint endPoint = new IPEndPoint(ipAddr, 7777);
-        Managers.Network.GameServer.Connect(endPoint, OnConnectionSuccess);
+        Managers.Network.GameServer.Connect(endPoint, OnConnectionSuccess, OnConnectionFailed);
         GetObject((int)EGameObjects.ServerConnectButton).gameObject.SetActive(false);
     }
 
@@ -156,5 +151,18 @@ public class UI_TitleScene : UI_Scene
     {
         Debug.Log("Failed To Connect To Server");
         State = ETitleSceneState.FailedToConnectToServer;
+    }
+
+    public void OnAuthResHandler(S_AuthRes resPacket)
+    {
+        if (State != ETitleSceneState.ConnectedToServer)
+            return;
+
+        if (resPacket.Success == false)
+            return;
+
+        // 게임서버가 인증 통과 해주면 캐릭터 목록 요청.
+        //UI_SelectCharacterPopup popup = Managers.UI.ShowPopupUI<UI_SelectCharacterPopup>();
+        //popup.SendHeroListReqPacket();
     }
 }

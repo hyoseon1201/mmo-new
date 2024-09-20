@@ -7,6 +7,8 @@ public class Define
     public const char MAP_TOOL_WALL = '0';
     public const char MAP_TOOL_NONE = '1';
 
+    public const int MAX_LOBBY_HERO_COUNT = 3;
+
     public const int HERO_DEFAULT_MOVE_DEPTH = 8;
     public enum EScene
     {

@@ -1,8 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using WebPacket;
 
 public class UI_LoginPopup : UI_Popup
 {
@@ -28,8 +28,6 @@ public class UI_LoginPopup : UI_Popup
         BindObjects(typeof(EGameObjects));
         BindTexts(typeof(ETexts));
 
-        //TODO : 인증서버로 로그인
-
         GetObject((int)EGameObjects.LoginButton).BindEvent(OnClickLoginButton);
     }
 
@@ -40,14 +38,32 @@ public class UI_LoginPopup : UI_Popup
 
     void OnClickLoginButton(PointerEventData evt)
     {
-        // 1) TODO : 인증서버로 인증 요청
-        // 2) TDOO : 인증성공시 DB ID값과 JWT 받아서 게임서버에 연결 시도
+        string username = GetObject((int)EGameObjects.ID).GetComponentInChildren<TMP_InputField>().text;
+        string password = GetObject((int)EGameObjects.PW).GetComponentInChildren<TMP_InputField>().text;
 
-        // TEMP (인증성공했다고 가정하고 AccountDbId와 jwt 넘겨줌)
-        Managers.AccountDbId = 0;
-        Managers.AccessToken = "";
+        WWWForm form = new WWWForm();
+        form.AddField("username", username);
+        form.AddField("password", password);
 
-        _onClosePopup?.Invoke(true);
-        ClosePopupUI();
+        Managers.Web.SendPostRequestForm<LoginResponse>("api/account/login", form, OnLoginRequestComplete);
+    }
+
+    void OnLoginRequestComplete(LoginResponse response)
+    {
+        Managers.AccountDbId = response.accountDbId;
+        Managers.AccessToken = response.accessToken;
+        Managers.RefreshToken = response.refreshToken;
+
+        Debug.Log(response);
+
+        if (response.success)
+        {
+            _onClosePopup?.Invoke(true);
+            ClosePopupUI();
+        }
+        else
+        {
+            _onClosePopup?.Invoke(false);
+        }
     }
 }

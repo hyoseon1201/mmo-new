@@ -11,6 +11,14 @@ namespace GameServer
 {
     public partial class ClientSession : PacketSession
     {
+        public void HandleAuthReq(C_AuthReq reqPacket)
+        {
+            S_AuthRes resPacket = new S_AuthRes();
+            resPacket.Success = true;
+
+            Send(resPacket);
+        }
+
         public void HandleEnterGame(C_EnterGame enterGamePacket)
         {
             Console.WriteLine("HandleEnterGame");

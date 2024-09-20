@@ -18,7 +18,7 @@ public class WebManager
 {
     public string BaseUrl { get; set; }
     public string ip = "127.0.0.1";
-    public int port = 7777;
+    public int port = 8080;
 
     public void Init()
     {
@@ -48,7 +48,6 @@ public class WebManager
         if (string.IsNullOrEmpty(BaseUrl))
             Init();
 
-        // http://127.0.0.1:7777/test/hello
         string sendUrl = $"{BaseUrl}/{url}";
 
         byte[] jsonBytes = null;
@@ -74,6 +73,33 @@ public class WebManager
             else
             {
                 Debug.Log($"CoSendWebRequest Failed : {uwr.error}");
+                T resObj = JsonUtility.FromJson<T>(uwr.downloadHandler.text);
+                res.Invoke(resObj);
+            }
+        }
+    }
+
+    public void SendPostRequestForm<T>(string url, WWWForm formData, Action<T> res)
+    {
+        Managers.Instance.StartCoroutine(CoSendWebRequestForm(url, formData, res));
+    }
+
+    IEnumerator CoSendWebRequestForm<T>(string url, WWWForm formData, Action<T> res)
+    {
+        if (string.IsNullOrEmpty(BaseUrl))
+            Init();
+        string sendUrl = $"{BaseUrl}/{url}";
+        using (UnityWebRequest uwr = UnityWebRequest.Post(sendUrl, formData))
+        {
+            yield return uwr.SendWebRequest();
+            if (uwr.result == UnityWebRequest.Result.ConnectionError || uwr.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError($"Error: {uwr.error}");
+                Debug.LogError($"Response: {uwr.downloadHandler.text}");
+            }
+            else
+            {
+                Debug.Log($"Success response: {uwr.downloadHandler.text}");
                 T resObj = JsonUtility.FromJson<T>(uwr.downloadHandler.text);
                 res.Invoke(resObj);
             }

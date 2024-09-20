@@ -1,18 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WebPacket : MonoBehaviour
+namespace WebPacket
 {
-    // Start is called before the first frame update
-    void Start()
+    [Serializable]
+    public class LoginRequest
     {
-        
+        public string username;
+        public string password;
     }
 
-    // Update is called once per frame
-    void Update()
+    [Serializable]
+    public class LoginResponse
     {
-        
+        public bool success;
+        public int accountDbId;
+        public string accessToken;
+        public string refreshToken;
     }
 }

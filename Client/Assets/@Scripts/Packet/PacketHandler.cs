@@ -13,6 +13,11 @@ class PacketHandler
         Debug.Log("S_Connected");
     }
 
+    public static void S_AuthResHandler(PacketSession session, IMessage message)
+    {
+        throw new NotImplementedException();
+    }
+
     public static void S_EnterGameHandler(PacketSession session, IMessage packet)
     {
         Debug.Log("S_EnterGameHandler");

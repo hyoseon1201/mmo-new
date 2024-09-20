@@ -13,6 +13,7 @@ public class Managers : MonoBehaviour
     // ¿Œ¡ı
     public static int AccountDbId { get; set; }
     public static string AccessToken { get; set; }
+    public static string RefreshToken { get; set; }
 
     #region Contents
 
@@ -34,6 +35,7 @@ public class Managers : MonoBehaviour
     private SceneManagerEx _scene = new SceneManagerEx();
     private UIManager _ui = new UIManager();
     private NetworkManager _network = new NetworkManager();
+    private WebManager _web = new WebManager();
 
     public static DataManager Data { get { return Instance?._data; } }
     public static PoolManager Pool { get { return Instance?._pool; } }
@@ -41,6 +43,7 @@ public class Managers : MonoBehaviour
     public static SceneManagerEx Scene { get { return Instance?._scene; } }
     public static UIManager UI { get { return Instance?._ui; } }
     public static NetworkManager Network { get { return Instance?._network; } }
+    public static WebManager Web { get { return Instance?._web; } }
 
     #endregion
 

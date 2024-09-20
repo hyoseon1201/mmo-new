@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class UI_SubItem : MonoBehaviour
+public class UI_SubItem : UI_Base
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    protected ScrollRect _parentScrollRect;
 
-    // Update is called once per frame
-    void Update()
+    protected override void Awake()
     {
-        
+        base.Awake();
+
+        _parentScrollRect = Utils.FindAncestor<ScrollRect>(gameObject);
     }
 }
